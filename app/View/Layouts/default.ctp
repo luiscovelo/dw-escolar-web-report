@@ -1,39 +1,34 @@
-<?php
-/**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       https://opensource.org/licenses/mit-license.php MIT License
- */
-
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $this->fetch('title'); ?>
+		DW ESCOLAR
 	</title>
+	<link rel="icon" href="<?php echo $this->webroot ?>img/favicon.jpg" type="image/jpg" sizes="192x192">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
 	<div id="container">
-		<nav class="navbar navbar-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		  <a class="navbar-brand" href="#">
-		    <img src="<?php echo $this->webroot ?>img/logo.png" style="width: 75%;" alt="">
+		    <img src="<?php echo $this->webroot ?>img/logo-transparente.png" style="width: 60%;" alt="">
 		  </a>
+		  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		    <div class="navbar-nav ml-auto">
+		      <a class="nav-link active" href="#etnia">Etnia <span class="sr-only">(current)</span></a>
+		      <a class="nav-link" href="#rede">Rede</a>
+		      <a class="nav-link" href="#genero">Gênero</a>
+		      <a class="nav-link" href="#renda">Renda</a>
+		      <a class="nav-link" href="#matricula">Matrícula</a>
+		    </div>
+		  </div>
 		</nav>
+			
+		<br>
+
 		<div id="content">
 
 			<?php echo $this->Flash->render(); ?>
