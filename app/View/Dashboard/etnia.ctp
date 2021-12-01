@@ -79,7 +79,7 @@
                 <hr>
                 <center>
                     <div class="chart-container" style="position: relative;width:25vw">
-                        <canvas id="chart_etnia"></canvas>
+                        <canvas id="chart"></canvas>
                     </div>
                 </center>
             </div>
@@ -95,16 +95,15 @@
 
 <script>
 
-const myData = <?php echo $labels ?>;
-const ctx = document.getElementById('chart_etnia').getContext('2d');
+const ctx = document.getElementById('chart').getContext('2d');
 
 var data = {
     labels: <?php echo $labels ?>,
     datasets: [{
         label: '# Qtde por etnia',
         data: <?php echo $values ?>,
-        backgroundColor: palette('tol', myData.length).map(function(hex) {
-            return '#' + hex;
+        backgroundColor: COLORS_HEX.map(function(hex){
+            return hex;
         }),
         borderWidth: 1
     }]

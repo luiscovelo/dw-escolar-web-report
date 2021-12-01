@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
         <h4 class="card-title">
-            Rede de escolas
+            Gênero
         </h4>
 
         <hr>
@@ -9,7 +9,7 @@
         <?php echo $this->Form->create('report'); ?>
             <div class="row" style="padding-bottom: 7px;">
                 <div class="col-md-3">
-                    <?php echo $this->Form->input('genero_id',array('label' => 'Gênero', 'class' => 'form-control form-control-chosen','options'=>$generos,"empty"=>"Todos gêneros","label"=>false)); ?>
+                    <?php echo $this->Form->input('rede_id',array('label' => 'Rede', 'class' => 'form-control form-control-chosen','options'=>$redes,"empty"=>"Todas redes","label"=>false)); ?>
                 </div>
 
                 <div class="col-md-3">
@@ -54,7 +54,7 @@
                     <tr>
                         <th></th>
                         <?php foreach ($dados as $key => $value) { ?>
-                            <th><?php echo $value["rede"]["nome"] ?></th>
+                            <th><?php echo $value["genero"]["nome"] ?></th>
                         <?php } ?>
                     </tr>
                     <tr>
@@ -100,7 +100,7 @@ const ctx = document.getElementById('chart').getContext('2d');
 var data = {
     labels: <?php echo $labels ?>,
     datasets: [{
-        label: '# Qtde por rede de escola',
+        label: '# Qtde por gênero',
         data: <?php echo $values ?>,
         backgroundColor: COLORS_HEX.map(function(hex){
             return hex;

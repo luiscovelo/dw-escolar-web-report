@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
         <h4 class="card-title">
-            Rede de escolas
+            Situação de matrícula
         </h4>
 
         <hr>
@@ -17,11 +17,11 @@
                 </div>
 
                 <div class="col-md-3">
-                    <?php echo $this->Form->input('renda_id',array('label' => 'Renda', 'class' => 'form-control form-control-chosen','options'=>$rendas,"empty"=>"Todas rendas","label"=>false)); ?>
+                    <?php echo $this->Form->input('rede_id',array('label' => 'Gênero', 'class' => 'form-control form-control-chosen','options'=>$redes,"empty"=>"Todas redes","label"=>false)); ?>
                 </div>
 
                 <div class="col-md-3">
-                    <?php echo $this->Form->input('matricula_id',array('label' => 'Situação matrícula', 'class' => 'form-control form-control-chosen','options'=>$matriculas,"empty"=>"Todas situações de matrícula","label"=>false)); ?>
+                    <?php echo $this->Form->input('renda_id',array('label' => 'Renda', 'class' => 'form-control form-control-chosen','options'=>$rendas,"empty"=>"Todas rendas","label"=>false)); ?>
                 </div>
 
             </div>
@@ -50,20 +50,22 @@
                 
             <div class="col-md-6">
             
-                <table class="table table-bordered">
-                    <tr>
-                        <th></th>
-                        <?php foreach ($dados as $key => $value) { ?>
-                            <th><?php echo $value["rede"]["nome"] ?></th>
-                        <?php } ?>
-                    </tr>
-                    <tr>
-                        <td>Total</td>
-                        <?php foreach ($dados as $key => $value) { ?>
-                            <td><?php echo $value[0]["total"] ?></td>
-                        <?php } ?>
-                    </tr>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th></th>
+                            <?php foreach ($dados as $key => $value) { ?>
+                                <th><?php echo $value["matricula"]["situacao"] ?></th>
+                            <?php } ?>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <?php foreach ($dados as $key => $value) { ?>
+                                <td><?php echo $value[0]["total"] ?></td>
+                            <?php } ?>
+                        </tr>
+                    </table>
+                </div>
 
             </div>
 
@@ -78,7 +80,7 @@
                 </select>
                 <hr>
                 <center>
-                    <div class="chart-container" style="position: relative;width:25vw">
+                    <div class="chart-container" style="position: relative;width:35vw;height: 50%;">
                         <canvas id="chart"></canvas>
                     </div>
                 </center>
@@ -100,7 +102,7 @@ const ctx = document.getElementById('chart').getContext('2d');
 var data = {
     labels: <?php echo $labels ?>,
     datasets: [{
-        label: '# Qtde por rede de escola',
+        label: '# Qtde por matrícula',
         data: <?php echo $values ?>,
         backgroundColor: COLORS_HEX.map(function(hex){
             return hex;
@@ -111,7 +113,10 @@ var data = {
 
 var chartCfg = {
     type: 'pie',
-    data: data
+    data: data,
+    options: {
+        responsive: true,
+    }
 };
 
 var myChart = new Chart(ctx, chartCfg );
