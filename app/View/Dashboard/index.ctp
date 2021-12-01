@@ -23,6 +23,10 @@
     <section id="naturalidade">
         <iframe id="if_naturalidade" src="<?php echo $this->Html->url(array("controller"=>"dashboard","action"=>"naturalidade")) ?>" style="width: 100%" frameBorder="0" scrolling="auto"></iframe>
     </section>
+    <br>
+    <section id="faixa">
+        <iframe id="if_faixa" src="<?php echo $this->Html->url(array("controller"=>"dashboard","action"=>"faixa")) ?>" style="width: 100%" frameBorder="0" scrolling="auto"></iframe>
+    </section>
 
 </div>
 
@@ -63,4 +67,9 @@ if_naturalidade.onload = function(){
     if_naturalidade.style.height = if_naturalidade.contentWindow.document.body.scrollHeight + 'px';
 }
 
+var if_faixa = document.getElementById("if_faixa");
+
+if_faixa.onload = function(){
+    if_faixa.style.height = if_faixa.contentWindow.document.body.scrollHeight + 'px';
+}
 </script>

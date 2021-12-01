@@ -52,6 +52,7 @@
 		      	<a class="nav-link" href="#renda">Renda familiar</a>
 		      	<a class="nav-link" href="#matricula">Situação de matrícula</a>
 		      	<a class="nav-link" href="#naturalidade">Naturalidade</a>
+		      	<a class="nav-link" href="#faixa">Faixa etária</a>
 		    </div>
 		  </div>
 		</nav>
